@@ -6,9 +6,9 @@ var Store = function(name, city, inventory, balance){
 }
 
 Store.prototype ={
-  list: function(array){
+  list: function(){
     var albums = "";
-    for (item of array){
+    for (item of this.inventory){
       albums += item.artist + " - "+ item.title+", ";
     }
     return albums;
