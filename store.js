@@ -14,9 +14,9 @@ Store.prototype ={
     return albums;
   },
 
-  add: function(record, array){
-    array.push(record);
-    return array.length;
+  add: function(record){
+    this.inventory.push(record);
+    return this.inventory.length;
   },
 
   sale: function(record, store){
