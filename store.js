@@ -19,10 +19,10 @@ Store.prototype ={
     return this.inventory.length;
   },
 
-  sale: function(record, store){
+  sale: function(record){
     sale = record.price;
-    store.balance += sale;
-    return store.balance;
+    this.balance += sale;
+    return this.balance;
   },
 
   finances: function(store){
