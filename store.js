@@ -25,15 +25,15 @@ Store.prototype ={
     return this.balance;
   },
 
-  finances: function(store){
+  finances: function(){
     var worth;
     var money = 0;
     var total = 0;
-    for(item of store.inventory){
+    for(item of this.inventory){
       money += item.price;
     }
-    total = money + store.balance;
-    worth = "The Store Balance is £"+store.balance+". The Inventory is worth £"+money+ ". Total worth of "+store.name+" is:£" + total;
+    total = money + this.balance;
+    worth = "The Store Balance is £"+this.balance+". The Inventory is worth £"+money+ ". Total worth of "+this.name+" is:£" + total;
 
     return worth;
   }
