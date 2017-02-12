@@ -32,20 +32,22 @@ var record1, record2;
     assert.equal(1200, store.balance);
   });
 
-  it('can LIST the inventory', function(){
+  it('can list the inventory', function(){
     assert.equal("Trews - Den of Thieves, Maroon 5 - Songs About Jane, ",store.list());
-  });
-
-  it('Should be able to make a sale', function(){
-    assert.equal(1211,store.sale(record2));
-  });
-
-  it('Should be able to give financial report', function(){
-    assert.equal("The Store Balance is £1200. The Inventory is worth £23. Total worth of Ronnies Records is:£1223",store.finances());
   });
 
   it('Should be able to add records to Inventory', function(){
     assert.equal(3,store.add(record2));
+  });
+
+  it('Should be able to make a sale', function(){
+    store.sale(record2);
+    assert.equal(1211,store.balance);
+    assert.equal(1,store.inventory.length);
+  });
+
+  it('Should be able to give financial report', function(){
+    assert.equal("The Store Balance is £1200. The Inventory is worth £23. Total worth of Ronnies Records is:£1223",store.finances());
   });
 
 

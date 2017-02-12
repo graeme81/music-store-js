@@ -5,7 +5,7 @@ var Store = function(name, city, inventory, balance){
   this.balance = balance;
 }
 
-Store.prototype ={
+Store.prototype = {
   list: function(){
     var albums = "";
     for (item of this.inventory){
@@ -20,15 +20,19 @@ Store.prototype ={
   },
 
   sale: function(record){
-    sale = record.price;
-    this.balance += sale;
-    return this.balance;
+    for (var i=0; i<this.inventory.length; i++){
+      if(this.inventory[i] === record){
+        this.inventory.splice(i,1);
+        sale = record.price;
+        this.balance += sale;
+      };
+    };
   },
 
   finances: function(){
     var worth;
-    var money = 0;
-    var total = 0;
+    var money = 0, total = 0;
+
     for(item of this.inventory){
       money += item.price;
     }
@@ -36,7 +40,7 @@ Store.prototype ={
     worth = "The Store Balance is £"+this.balance+". The Inventory is worth £"+money+ ". Total worth of "+this.name+" is:£" + total;
 
     return worth;
-  }
+  },
 
 };
 
