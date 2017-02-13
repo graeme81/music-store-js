@@ -19,7 +19,7 @@ describe('Customer', function(){
     assert.equal(100, rod.cash);
   });
 
-  it('should have a Collection', function(){
+  it('should have a collection', function(){
     assert.equal(record1,rod.collection[0]);
     assert.equal(2, rod.collection.length);
   });

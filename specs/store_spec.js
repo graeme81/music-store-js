@@ -19,7 +19,7 @@ var record1, record2;
     assert.equal('Ronnies Records', store.name);
   });
 
-  it('should have a city', function(){
+  it('should have a City', function(){
     assert.equal('Edinburgh', store.city);
   });
 
@@ -36,17 +36,17 @@ var record1, record2;
     assert.equal("Trews - Den of Thieves, Maroon 5 - Songs About Jane, ",store.list());
   });
 
-  it('Should be able to add records to Inventory', function(){
+  it('can add records to Inventory', function(){
     assert.equal(3,store.add(record2));
   });
 
-  it('Should be able to make a sale', function(){
+  it('can make a sale', function(){
     store.sale(record2);
     assert.equal(1211,store.balance);
     assert.equal(1,store.inventory.length);
   });
 
-  it('Should be able to give financial report', function(){
+  it('can give financial report', function(){
     assert.equal("The Store Balance is £1200. The Inventory is worth £23. Total worth of Ronnies Records is:£1223",store.finances());
   });
 
